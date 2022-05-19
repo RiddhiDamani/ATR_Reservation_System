@@ -28,9 +28,7 @@ public class HotelServiceImpl implements HotelService{
     public List<Hotels> getHotelsBySearchTerm(String searchTerm) {
         List<Integer> locIds = new ArrayList<Integer>();
         List<Locations> locs = locationsRepository.findLocationsByMultiParams(searchTerm);
-        for (Locations locations : locs) {
-            locIds.add(locations.getId());
-        }
+     
         return hotelsRepository.findHotelsByLocIds(locIds);
     }
     
