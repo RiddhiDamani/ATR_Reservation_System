@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se430.atrteam.atrreservationsystem;
+package atrteam.atrreservationsystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
