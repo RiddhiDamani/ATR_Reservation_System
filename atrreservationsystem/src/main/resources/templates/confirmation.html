@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="fragments :: head">
+</head>
+
+<body>
+    <nav th:replace="fragments :: navigation"></nav>
+    <hr>
+
+    <div class="box" style="padding-bottom:150px">
+        <h2 class="title">Booking Successful</h2>
+        <hr>
+        <h2 class="title">Booking ID: <span th:text="${resid}"></span></h2>
+        <h3>Your booking has been successfully completed. We hope you enjoy your stay. payment ID: <span
+                th:text="${payid}"></span></h3>
+
+
+    </div>
+
+    <div class="field is-horizontal margin">
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <a href="/"><input class="button is-info is-medium" type="submit" name="submitBtn2" id="submitBtn2"
+                            value="Go to Homepage" /></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

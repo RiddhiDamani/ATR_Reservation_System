@@ -1,0 +1,30 @@
+.margin {
+    margin: 3%;
+}
+
+.navbarMarginTop {
+    margin-top: 1%;
+}
+
+.signInBoxSize {
+    margin-top: 100px;
+    height: 25rem;
+    width: 25rem;
+}
+
+.registerBoxSize {
+    margin-top: 1%;
+} 
+
+.topMargin {
+    margin-top: 20%;
+    margin-right: 20%;
+}
+  
+.notification > button.delete {    
+    border: none;
+}
+  
+.is-hidden {
+    display: none;
+}

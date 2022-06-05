@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="fragments :: head">
+</head>
+
+<body>
+    <nav th:replace="fragments :: navigation"></nav>
+    <hr>
+
+    <div class="box" style="margin-left: 10%; margin-right: 10%;">
+        <div class="field is-vertical margin">
+            <div class="field-body">
+                <form action="/manage.html" method="get">
+                    <div class="field has-addons">
+                        <div class="control">
+                            <input class="input is-info is-medium" placeholder="Enter Booking ID" type="text"
+                                name="bookingID" id="bookingID" />
+                        </div>
+                        <div class="control">
+                            <input class="button is-info is-medium" type="submit" value="Search"
+                                sec:authorize="hasAnyAuthority('USER')" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br><br>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <p><b>Booking ID:</b> <span th:text="${resid}"></span></p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-vertical margin">
+            <div class="field-body">
+                <form action="/updated.html" method="get">
+                    <p><b>Hotel Name:</b> <span th:text="${hotelname}"></span></p>
+                    <div class="field">
+                        <label for="start"><b>Check in:</b></label>
+                        <input type="date" id="start" name="checkindate" th:value="${checkindate}">
+                        <label for="end"><b>Check out:</b></label>
+                        <input type="date" id="end" name="checkoutdate" th:value="${checkoutdate}">
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <p><b>Room Type:</b> <span th:text="${roomtype}"></span></p>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <p><b>Number of Guests:</b> <span th:text="${numberofguests}"></p>
+                        </p>
+                        <p class="help is-danger"></p>
+                    </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input type="hidden" id="residfield" name="resid" th:value="${resid}">
+                    <input type="submit" th:if="${resid != null}" class="button is-info is-medium"
+                        style="float:left; margin:5px" value="Update Booking" sec:authorize="hasAnyAuthority('USER')" />
+                    </form>
+                    <a class="button is-info is-medium" style="float:right; margin:5px" href="/">Go to Homepage</a>
+                    <a th:if="${resid != null}" class="button is-info is-medium" style="float:right; margin:5px"
+                        th:href="@{'/cancellation.html?resid=' + ${resid}}" sec:authorize="hasAuthority('USER')">Cancel
+                        Booking</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="fragments :: head">
+</head>
+
+<body>
+    <nav th:replace="fragments :: navigation"></nav>
+    <hr>
+    <div class="columns">
+        <div class="column"></div>
+        <div class="column is-four-fifths">
+            <!-- center column -->
+            <form action="/payment.html" method="get">
+                <article class="message is-dark">
+                    <div class="message-header">
+                        <h1>Booking Details Review</h1>
+                    </div>
+                    <div class="message-body">
+                        <div class="columns">
+                            <div class="column is-half">
+                                <strong>Hotel Name: </strong><span th:text="${hotelname}"></span>
+                                <br>
+                                <strong>Check In Date: </strong><input type="date" name="startdt"
+                                    th:value="${checkindate}">
+                                <br>
+                                <strong>Check Out Date: </strong><input type="date" name="enddt"
+                                    th:value="${checkoutdate}">
+                                <br>
+                                <strong>Room Type: </strong><span th:text="${roomtype}"></span>
+                                <br>
+                                <strong>Room Number: </strong><span th:text="${roomnumber}"></span>
+                                <br>
+                                <strong>Maxmimum Number of Guests: </strong><span th:text="${numberofguests}"></span>
+                            </div>
+                            <div class="column is-half">
+                                <strong>Cost Per Night: </strong><span th:text="${costpernight}"></span>
+                                <br>
+                                <strong>Tax: </strong><span th:text="${tax}"></span>
+                                <br>
+                                <strong>Total: </strong><span th:text="${total}"></span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <div class="field is-horizontal is-grouped is-grouped-centered">
+                    <p class="control">
+                        <a class="button is-info is-normal" href="/">Cancel</a>
+                    </p>
+                    <p class="control">
+                        <input class="button is-info is-normal" type="submit" value="Confirm Booking"
+                            sec:authorize="hasAnyAuthority('USER')" />
+                    </p>
+                </div>
+                <input name="roomid" type="hidden" th:value="${roomid}">
+                <input name="resid" type="hidden" th:value="${resid}">
+            </form>
+            <!-- end center column -->
+        </div>
+        <div class="column"></div>
+    </div>
+
+</body>
+
+</html>

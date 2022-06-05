@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="fragments :: head">
+</head>
+
+<body>
+    <nav th:replace="fragments :: navigation"></nav>
+    <hr>
+
+    <div class="box" style="margin-left: 10%; margin-right: 10%;">
+        <h2 class="title">Booking Cancelled</h2>
+        <hr>
+        <h2 class="title">Booking ID: <span th:text=${resid}></h2>
+        <h3>Booking has been successfully cancelled. We hope you to see you again.</h3>
+
+
+    </div>
+
+    <div class="field is-horizontal margin">
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <a class="button is-info is-medium" type="submit" name="submitBtn3" id="submitBtn3" href="/">Go to
+                        Homepage</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
