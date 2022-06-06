@@ -62,7 +62,7 @@ public class MainController {
 		return "hotel-details";
 	}
 
-	@RequestMapping("/book-room.html")
+	@RequestMapping("/reserveRoom.html")
 	public String bookRoom(Model model
 						  ,@RequestParam(name = "roomid") Integer roomId
 						  ){
@@ -89,7 +89,7 @@ public class MainController {
 		} catch (NoSuchElementException ex){
 			ex.printStackTrace();
 		}
-		return "book-room";	
+		return "reserveRoom";	
 	}
 
 	@RequestMapping("/confirmation.html")
