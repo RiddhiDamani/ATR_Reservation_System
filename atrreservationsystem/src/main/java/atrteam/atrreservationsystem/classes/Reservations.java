@@ -21,13 +21,10 @@ public class Reservations {
     private long id;
 
     @Column(name = "START_DT")
-    @NotNull
     private LocalDate startDate;
 
     @Column(name = "END_DT")
-    @NotNull
     private LocalDate endDate;
-
 
     @Column(name = "USER_ID")
     private Integer userId;

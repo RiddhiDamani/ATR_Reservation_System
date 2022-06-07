@@ -1,12 +1,6 @@
 package atrteam.atrreservationsystem.classes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,14 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Role {
     
-    public Role(String roleName) {
-        this.roleName = roleName;
-    }
-
-    public Role(Integer id) {
-        this.id = id;
-    }
-
     @Id
     @Column(name = "ROLE_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,5 +19,13 @@ public class Role {
 
     @Column(name = "role_name", nullable = false)
     private String roleName;
+
+    public Role(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public Role(Integer id) {
+        this.id = id;
+    }
 
 }
