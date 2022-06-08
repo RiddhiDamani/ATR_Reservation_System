@@ -1,3 +1,10 @@
+/*
+ * ATR Reservation System 
+ * SE 430 Final Project
+ * Group 3: Aisha, Tan, Riddhi
+ * 
+ */
+
 package atrteam.atrreservationsystem;
 
 import org.springframework.boot.SpringApplication;
