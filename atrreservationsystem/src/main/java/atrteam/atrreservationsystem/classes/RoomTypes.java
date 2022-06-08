@@ -1,7 +1,6 @@
 package atrteam.atrreservationsystem.classes;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
